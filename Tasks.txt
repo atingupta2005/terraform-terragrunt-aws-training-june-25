@@ -1,0 +1,25 @@
+Convert MD pages to Text/PDF documents
+Provide code to partipants in unorganized manner
+Search and replace - stacksimplify, kalyan, reddy, exam
+Take PDF from PPTs after removing hidden slides option
+Understand: https://gitlab.com/atin-trainings/terraform-azure-aws-cloudthat-bangalore-apr-21/-/tree/am1/Hands-on/01-Azure/51-Terraform-Modules-Build-Local-Module
+
+Complete pending practicals
+51_Provisioning_VNet_Gateway_Routes_VM
+60-Creating-a-two-tier-architecture-in-Azure-using-modules
+
+
+Do hands-on of all the code
+
+Print:
+ Gatepass: Done
+ Corona Certificate: Done
+ Tickets: Done
+ Boarding pass: 
+ Download App: Done
+
+Original ID Card
+Web Check in
+
+Activate Uber/Ola
+Book advance taxi on Uber/Ola both

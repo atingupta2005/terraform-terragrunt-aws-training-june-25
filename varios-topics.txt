@@ -1,0 +1,24 @@
+AWS:
+User name	u1
+Password	<>
+Access key ID	<>
+Secret access key	<>
+Console login link	<>
+
+sudo apt-get install awscli
+aws configure
+aws sts get-caller-identity
+
+AMI ID: <>
+
+sudo apt-get update
+sudo apt-get install graphviz
+terraform graph | dot -Tsvg > graph.svg
+ 
+
+export TF_parallelism=1
+terraform apply -parallelism=1
+
+Backends:
+https://www.terraform.io/language/settings/backends/local
+
