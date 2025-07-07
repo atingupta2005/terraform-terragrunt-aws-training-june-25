@@ -1,13 +1,7 @@
-variable "aws-region" {
-  description = "The AWS region"
-  type        = string
-  default     = "us-east-1"
-}
-
-
 variable "instance-ami" {
   description = "The AMI (Amazon Machine Image) that identifies the instance"
   type        = string
+  default     = "ami-03598bf9d15814511"
 }
 
 variable "instance-type" {
@@ -19,7 +13,7 @@ variable "instance-type" {
 variable "instance-key-name" {
   description = "The name of the SSH key to associate to the instance. Note that the key must exist already."
   type        = string
-  default     = ""
+  default     = "atin-key2"
 }
 
 variable "iam-role-name" {

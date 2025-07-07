@@ -10,8 +10,56 @@ resource "aws_instance" "instance" {
   vpc_security_group_ids      = ["${aws_security_group.sg.id}"]
   subnet_id                   = "${aws_subnet.subnet.id}"
 
+  provisioner "file" {
+    source      = "out.tf"
+    destination = "/tmp/out.tf"
+  }
+  
+  provisioner "local-exec" {
+    command = "echo ${self.private_ip} >> private_ips.txt"
+  }
+  
+  provisioner "remote-exec" {
+    inline = [
+      "sudo yum update -y",
+      "sudo yum install git -y",
+      "touch /tmp/test-fle-by-atin.txt",
+      "ls -al /"
+    ]
+  }
+  
+  connection {
+      type        = "ssh"
+      user        = "ec2-user"  # For Amazon Linux
+      private_key = file("~/atin-key2.pem")  # Path to your private key
+      host        = self.public_ip
+    }
+  
   tags = {
     Name = "${var.instance-tag-name}"
+  }
+}
+
+
+  resource "null_resource" "copy_script" {
+  provisioner "file" {
+    content     = templatefile("${path.module}/templates/nginx.conf.tmpl", {
+      domain       = "example.com",
+      backend_host = "127.0.0.1",
+      backend_port = 3000
+    })
+    destination = "/tmp/nginx.conf"
+
+    connection {
+      type        = "ssh"
+      user        = "ec2-user"
+      private_key = file("~/atin-key2.pem")
+      host        = aws_instance.instance.public_ip
+    }
+  }
+
+  triggers = {
+    file_checksum = filesha256("templates/nginx.conf.tmpl")
   }
 }
 

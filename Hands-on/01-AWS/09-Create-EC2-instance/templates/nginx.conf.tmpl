@@ -1,0 +1,8 @@
+server {
+  listen       8080;
+  server_name  ${domain};
+
+  location / {
+    proxy_pass http://${backend_host}:${backend_port};
+  }
+}
