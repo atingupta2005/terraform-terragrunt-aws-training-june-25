@@ -1,8 +1,0 @@
-server {
-  listen       88;
-  server_name  ${domain};
-
-  location / {
-    proxy_pass http://${backend_host}:${backend_port};
-  }
-}
