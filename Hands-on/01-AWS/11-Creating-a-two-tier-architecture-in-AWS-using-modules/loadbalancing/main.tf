@@ -32,3 +32,6 @@ resource "aws_lb_listener" "project_lb_listener" {
     target_group_arn = aws_lb_target_group.project_tg.arn
   }
 }
+
+
+## Add some code to create s3 bucket
