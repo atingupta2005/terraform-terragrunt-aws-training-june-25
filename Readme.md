@@ -4,6 +4,7 @@
 
 ## 📘 Day 1: Terraform Fundamentals & AWS Provisioning Basics (8 Hours)
 
+
 ### 🧠 Concepts
 - Introduction to DevOps & Infrastructure as Code (IaC)
 - What is Terraform and how it works?
