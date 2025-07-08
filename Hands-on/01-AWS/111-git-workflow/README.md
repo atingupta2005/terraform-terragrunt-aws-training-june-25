@@ -62,6 +62,13 @@ This ensures code is **clean**, **valid**, and **reviewable** before it goes int
 ### 🔹 Step 1: Install `pre-commit`
 
 ```bash
+sudo apt install python3.12-venv
+python3 -m venv ~/venv
+source  ~/venv/bin/activate
+```
+
+
+```bash
 pip install pre-commit
 pre-commit install
 ```
